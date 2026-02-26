@@ -3,13 +3,17 @@ setup = function() {
 };
 
 //Background Images
-var caveSceneImage = loadImage("https://www.shutterstock.com/image-vector/vector-illustration-background-forest-scenery-600nw-1807427365.jpg");
+var fairylandImage = loadImage("https://t4.ftcdn.net/jpg/08/95/54/15/360_F_895541536_Cnjhkibw1pUVLrC4pewN7uFrXhPw8QPT.jpg");
 
-var forestImage = loadImage("https://t3.ftcdn.net/jpg/02/50/39/72/360_F_250397206_HuBj2V5oEytcqonzpzum4IjEjtAsZq3g.jpg");
+var waterfallImage = loadImage("https://i.ytimg.com/vi/UWmUq2Wqs1E/maxresdefault.jpg");
+
+var houseImage = loadImage("https://thumbs.dreamstime.com/b/magical-fantasy-fairy-tale-scenery-night-forest-generative-ai-370011353.jpg")
+
+
 
 //Variable Declarations
-var sceneImage = caveSceneImage;
-var sceneText = "Where do you want to go?  [Press f for forest and c for cave]";
+var sceneImage = fairylandImage;
+var sceneText = "Where do you want to go?  [Press w for waterfall and u for stairs]";
 
 draw = function(){
     
@@ -17,14 +21,19 @@ draw = function(){
 
 
    if(keyPressed){
-     if(key == 'f'){
-       sceneImage = forestImage;   
+     if(key == 'w'){
+       sceneImage = waterfallImage;   
        sceneText = "No fox here.  [Press s to restart]";
      } 
      if(key == 's'){
-      sceneImage = caveSceneImage;
-      sceneText = "Where do you want to go?  [Press f for forest and c for cave]";
+      sceneImage = fairylandImage;
+      sceneText = "Where do you want to go?   [Press w for waterfall and u for wstairs]";
     } 
+
+    if(key == 'u'){
+      sceneImage = houseImage
+      sceneText = "where to? [Press h for house or s to restart]";
+  }
    }
   
 };
