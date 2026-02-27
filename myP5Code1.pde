@@ -1,5 +1,6 @@
 setup = function() {
     size(600, 400);
+    frameRate(25)
 };
 
 //Background Images
@@ -9,31 +10,52 @@ var waterfallImage = loadImage("https://i.ytimg.com/vi/UWmUq2Wqs1E/maxresdefault
 
 var houseImage = loadImage("https://thumbs.dreamstime.com/b/magical-fantasy-fairy-tale-scenery-night-forest-generative-ai-370011353.jpg")
 
+var inhouseImage = loadImage("https://i.ytimg.com/vi/menMLX0ZTJA/hq720.jpg?sqp=-oaymwEhCK4FEIIDSFryq4qpAxMIARUAAAAAGAElAADIQj0AgKJD&rs=AOn4CLAk2uN0XrXehLq2RGOStblkYFKPZQ")
 
+var pathImage = loadImage("https://png.pngtree.com/thumb_back/fh260/background/20250523/pngtree-magical-enchanted-forest-path-with-glowing-fairy-lights-and-lush-greenery-image_17332145.jpg")
+
+var caveImage = loadImage("https://i.ytimg.com/vi/uB0U7RgEMUk/sddefault.jpg?v=69009291")
 
 //Variable Declarations
 var sceneImage = fairylandImage;
-var sceneText = "Where do you want to go?  [Press w for waterfall and u for stairs]";
+var sceneText =  "Explore the land. Where to? [Press w for waterfall and u for stairs]";
 
 draw = function(){
     
    drawScene();
 
+if(mousePressed){
 
-   if(keyPressed){
+  text("✨",random(0,600),random(0,400));
+  text("✨",random(0,600),random(0,400));
+  text("✨",random(0,600),random(0,400));
+}
+
+   if(keyPressed){ //short story
      if(key == 'w'){
        sceneImage = waterfallImage;   
-       sceneText = "No fox here.  [Press s to restart]";
+       sceneText = "  Where to? [Press c for cave or s to restart]";
      } 
-     if(key == 's'){
+     if(key == 's'){ //restart
       sceneImage = fairylandImage;
-      sceneText = "Where do you want to go?   [Press w for waterfall and u for wstairs]";
+      sceneText = "Explore the land. Where to? [Press w for waterfall and u for stairs]";
     } 
 
-    if(key == 'u'){
+    if(key == 'u'){ //longer story
       sceneImage = houseImage
-      sceneText = "where to? [Press h for house or s to restart]";
+      sceneText = "Where to? [Press h for house or p for path or s to restart]";
   }
+  if(key == 'h'){
+    sceneImage = inhouseImage
+    sceneText = "Ahh, Nice and cozy [Press p for back to path or s to restart]";
+  }
+  if(key == 'p'){
+     sceneImage = caveImage
+     sceneText = "So Pretty! Where to? [Press l to keep going or s to restart]";
+  }
+   if(key == 'c'){
+     sceneImage = pathImage
+     sceneText = "So Pretty! Where to? [Press l to keep going or s to restart]";
    }
   
 };
