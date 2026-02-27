@@ -24,12 +24,12 @@ draw = function(){
     
    drawScene();
 
-if(mousePressed){
+ if(mousePressed){
 
   text("✨",random(0,600),random(0,400));
   text("✨",random(0,600),random(0,400));
   text("✨",random(0,600),random(0,400));
-}
+ }
 
    if(keyPressed){ //short story
      if(key == 'w'){
@@ -50,15 +50,15 @@ if(mousePressed){
     sceneText = "Ahh, Nice and cozy [Press p for back to path or s to restart]";
   }
   if(key == 'p'){
-     sceneImage = caveImage
+     sceneImage = pathImage
      sceneText = "So Pretty! Where to? [Press l to keep going or s to restart]";
   }
    if(key == 'c'){
-     sceneImage = pathImage
-     sceneText = "So Pretty! Where to? [Press l to keep going or s to restart]";
+    sceneImage = caveImage
+    sceneText = "WOW! Where to? [Press p to keep going or s to restart]";
    }
-  
-};
+}
+}
 
 var drawScene = function(){
     image(sceneImage, 0, 0, 600, 400);
