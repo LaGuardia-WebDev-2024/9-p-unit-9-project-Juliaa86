@@ -16,6 +16,12 @@ var pathImage = loadImage("https://png.pngtree.com/thumb_back/fh260/background/2
 
 var caveImage = loadImage("https://i.ytimg.com/vi/uB0U7RgEMUk/sddefault.jpg?v=69009291")
 
+var goingtowaterfallImage = loadImage("https://i.ytimg.com/vi/Nb-Bt4k0ncc/hq720.jpg?sqp=-oaymwEhCK4FEIIDSFryq4qpAxMIARUAAAAAGAElAADIQj0AgKJD&rs=AOn4CLBbw3KUNUFqMfvzCxVrglTlTB14dQ");
+
+var keepgoingImage = loadImage("https://i.ytimg.com/vi/4fEPqSjtL40/sddefault.jpg?v=663b4b45")
+
+var forsaleImage = loadImage("https://i.ytimg.com/vi/NN5jJfbvtWU/hq720.jpg?sqp=-oaymwEhCK4FEIIDSFryq4qpAxMIARUAAAAAGAElAADIQj0AgKJD&rs=AOn4CLAbqwdghudaVhGCRNCtwyX-EKVI1g")
+
 //Variable Declarations
 var sceneImage = fairylandImage;
 var sceneText =  "Explore the land. Where to? [Press w for waterfall and u for stairs]";
@@ -26,6 +32,8 @@ draw = function(){
 
  if(mousePressed){
 
+  text("✨",random(0,600),random(0,400));
+  text("✨",random(0,600),random(0,400));
   text("✨",random(0,600),random(0,400));
   text("✨",random(0,600),random(0,400));
   text("✨",random(0,600),random(0,400));
@@ -55,7 +63,19 @@ draw = function(){
   }
    if(key == 'c'){
     sceneImage = caveImage
-    sceneText = "WOW! Where to? [Press p to keep going or s to restart]";
+    sceneText = "WOW! Where to? [Press n to keep going or s to restart]";
+   }
+   if(key == 'l'){
+    sceneImage = goingtowaterfallImage
+    sceneText = "Omg! Continue On.[Press w to go to waterfall or ss to restart]";
+   }
+   if(key == 'n'){
+    sceneImage = keepgoingImage
+    sceneText = "Wow its amazing ( Press v to see further or s to restart)";
+   }
+   if(kee == 'v'){
+    sceneImage = forsaleImage
+    sceneText = "Look its for sale! After seeing the land would you live here? [Press y for yes or d for no]";
    }
 }
 }
