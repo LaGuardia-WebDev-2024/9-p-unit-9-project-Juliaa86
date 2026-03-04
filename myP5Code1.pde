@@ -22,6 +22,10 @@ var keepgoingImage = loadImage("https://i.ytimg.com/vi/4fEPqSjtL40/sddefault.jpg
 
 var forsaleImage = loadImage("https://i.ytimg.com/vi/NN5jJfbvtWU/hq720.jpg?sqp=-oaymwEhCK4FEIIDSFryq4qpAxMIARUAAAAAGAElAADIQj0AgKJD&rs=AOn4CLAbqwdghudaVhGCRNCtwyX-EKVI1g")
 
+var yayImage = loadImage("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQwATZsPqz7TeMRP5eMX6LQYaA5MpUdCB8nvg&s")
+
+var urinetownImage = loadImage("https://snworksceo.imgix.net/ame-egl/e1756e5d-43b8-4c14-9cae-f9aeceb10b82.sized-1000x1000.jpg?w=1000")
+
 //Variable Declarations
 var sceneImage = fairylandImage;
 var sceneText =  "Explore the land. Where to? [Press w for waterfall and u for stairs]";
@@ -71,11 +75,18 @@ draw = function(){
    }
    if(key == 'n'){
     sceneImage = keepgoingImage
-    sceneText = "Wow its amazing ( Press v to see further or s to restart)";
+    sceneText = "Wow its amazing [Press v to see further or s to restart]";
    }
-   if(kee == 'v'){
+   if(key == 'v'){
     sceneImage = forsaleImage
-    sceneText = "Look its for sale! After seeing the land would you live here? [Press y for yes or d for no]";
+    sceneText = "Look its for sale! After seeing the land would you live here? \n[Press y for yes or d for no]";
+   }
+   if(key == 'y'){
+    sceneImage = yayImage
+   }
+   if(key == 'd'){
+    sceneImage = urinetownImage
+    sceneText = " to buy tickets go to this link (show dates are March 26-28!) \n https://www.tix.com/ticket-sales/laguardiahs/699"
    }
 }
 }
@@ -83,6 +94,8 @@ draw = function(){
 var drawScene = function(){
     image(sceneImage, 0, 0, 600, 400);
     
+
+    if(sceneImage != yayImage){
     fill(0,0,0);
     rect(0, 350, 600, 100);
       
@@ -90,6 +103,8 @@ var drawScene = function(){
     textSize(20);
    
     text(sceneText, 10, 375);
+    }
+   
 };
 
 
